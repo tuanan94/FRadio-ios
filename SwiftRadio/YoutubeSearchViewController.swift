@@ -9,11 +9,14 @@
 import UIKit
 
 class YoutubeSearchViewController: UIViewController {
-
+    @IBOutlet var tableView: UITableView!
+    var dataSource: MyDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dataSource = MyDataSource()
+        tableView.dataSource = dataSource
+        tableView.reloadData()
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +34,20 @@ class YoutubeSearchViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+
+class MyDataSource: NSObject, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Youtube-cell", for: indexPath) as! YoutubeSearchTableViewCell
+        return cell
+    }
+    
+    
+    
+}
+
+

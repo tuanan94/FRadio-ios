@@ -10,6 +10,7 @@
 		2554A6D21D461B9600B63662 /* CustomAVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2554A6D11D461B9600B63662 /* CustomAVPlayerItem.swift */; };
 		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
 		673078AD1FA4E05E009943AE /* YoutubeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */; };
+		673078AF1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */; };
 		9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */; };
 		9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1221ABF6FEA00312E2B /* Main.storyboard */; };
 		9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
@@ -78,6 +79,7 @@
 		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchViewController.swift; sourceTree = "<group>"; };
+		673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchTableViewCell.swift; sourceTree = "<group>"; };
 		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E11A1ABF6FEA00312E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */,
 				94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */,
+				673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				94DB0A9D1B98B762005ED993 /* KeyboardLayoutConstraint.swift in Sources */,
 				94DB0AA51B98B762005ED993 /* SpringImageView.swift in Sources */,
 				949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */,
+				673078AF1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift in Sources */,
 				94DB0A981B98B762005ED993 /* DesignableTextField.swift in Sources */,
 				94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */,
 				94DB0A941B98B762005ED993 /* DesignableButton.swift in Sources */,
