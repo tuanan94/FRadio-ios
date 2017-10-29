@@ -9,7 +9,11 @@
 import UIKit
 
 class YoutubeSearchTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var videoTitle: UILabel!
+    
+    @IBOutlet weak var videoThumbnail: UIImageView!
+    @IBOutlet weak var videoDescription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
