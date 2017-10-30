@@ -46,15 +46,16 @@ class YoutubeSearchViewController: UIViewController {
         print("search")
     }
     
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        var row = tableView.indexPathForSelectedRow?.row
+        var detailController = segue.destination as! YoutubeDetailViewController
+        detailController.videoDetails = dataSource?.items.object(at: row!) as! NSDictionary
+        print("go to details")
     }
-    */
     class MyDataSource: NSObject, UITableViewDataSource{
         var searchResult: NSDictionary!
         var items: NSArray!
@@ -89,6 +90,10 @@ class YoutubeSearchViewController: UIViewController {
     class MyDataDelegate: NSObject, UITableViewDelegate{
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 200
+        }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            
         }
     }
 

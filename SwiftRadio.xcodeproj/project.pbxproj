@@ -15,6 +15,7 @@
 		674EE7BB1FA579EA0084C256 /* YoutubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7BA1FA579EA0084C256 /* YoutubeAPI.swift */; };
 		674EE7BD1FA57CA70084C256 /* YoutubeAPITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7BC1FA57CA70084C256 /* YoutubeAPITestCase.swift */; };
 		674EE7CD1FA581B30084C256 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7CC1FA581B30084C256 /* Request.swift */; };
+		674EE7CF1FA5C3820084C256 /* YoutubeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */; };
 		9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */; };
 		9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1221ABF6FEA00312E2B /* Main.storyboard */; };
 		9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
@@ -99,6 +100,7 @@
 		674EE7BC1FA57CA70084C256 /* YoutubeAPITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeAPITestCase.swift; sourceTree = "<group>"; };
 		674EE7C21FA57E020084C256 /* SwiftRadioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		674EE7CC1FA581B30084C256 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDetailViewController.swift; sourceTree = "<group>"; };
 		75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E11A1ABF6FEA00312E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				94D1D0A41AD6D6230022CA11 /* InfoDetailViewController.swift */,
 				94452E4E1AD6F24700BFE7A5 /* PopUpMenuViewController.swift */,
 				673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */,
+				674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */,
 				673078AF1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift in Sources */,
 				94DB0A981B98B762005ED993 /* DesignableTextField.swift in Sources */,
+				674EE7CF1FA5C3820084C256 /* YoutubeDetailViewController.swift in Sources */,
 				94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */,
 				94DB0A941B98B762005ED993 /* DesignableButton.swift in Sources */,
 				C6BB97EB1E0B515600282D80 /* Extensions.swift in Sources */,

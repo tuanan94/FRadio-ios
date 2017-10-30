@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -488,7 +489,65 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQK-JQ-AqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="16"/>
+            <point key="canvasLocation" x="-205" y="-457"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="De5-8o-uf6">
+            <objects>
+                <viewController id="qdB-7v-ltL" customClass="YoutubeDetailViewController" customModule="SwiftRadio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ko0-01-nd3"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXB-VK-fTn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sxq-bA-3cs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-AV-E6x">
+                                <rect key="frame" x="16" y="353.5" width="343" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="epo-pc-US2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="n6H-2F-9Ad">
+                                <rect key="frame" x="0.0" y="64" width="375" height="281.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n6H-2F-9Ad" secondAttribute="height" multiplier="480:360" id="kGC-7Q-QSv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-ex-sK6">
+                                <rect key="frame" x="16" y="450" width="343" height="127"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lhf-ex-sK6" firstAttribute="top" secondItem="lGx-AV-E6x" secondAttribute="bottom" constant="8" id="700-U9-PPn"/>
+                            <constraint firstItem="lhf-ex-sK6" firstAttribute="leading" secondItem="sxq-bA-3cs" secondAttribute="leading" constant="16" id="L63-QY-75c"/>
+                            <constraint firstAttribute="trailing" secondItem="lhf-ex-sK6" secondAttribute="trailing" constant="16" id="Nqv-gk-gws"/>
+                            <constraint firstItem="lGx-AV-E6x" firstAttribute="leading" secondItem="sxq-bA-3cs" secondAttribute="leading" constant="16" id="V2b-gL-8xl"/>
+                            <constraint firstItem="n6H-2F-9Ad" firstAttribute="leading" secondItem="sxq-bA-3cs" secondAttribute="leading" id="bUq-Xq-6fk"/>
+                            <constraint firstItem="n6H-2F-9Ad" firstAttribute="top" secondItem="Ko0-01-nd3" secondAttribute="bottom" id="fEI-Q9-hcm"/>
+                            <constraint firstAttribute="trailing" secondItem="lGx-AV-E6x" secondAttribute="trailing" constant="16" id="oOD-6K-Dnl"/>
+                            <constraint firstItem="lGx-AV-E6x" firstAttribute="top" secondItem="n6H-2F-9Ad" secondAttribute="bottom" constant="8" id="tOi-tZ-X3k"/>
+                            <constraint firstAttribute="trailing" secondItem="n6H-2F-9Ad" secondAttribute="trailing" id="tkN-qb-CTL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="lSE-HE-xtm" userLabel="aa"/>
+                    <connections>
+                        <outlet property="videoDescription" destination="lhf-ex-sK6" id="OFb-a7-1WB"/>
+                        <outlet property="videoImage" destination="n6H-2F-9Ad" id="WoU-hr-eop"/>
+                        <outlet property="videoTitle" destination="lGx-AV-E6x" id="uj4-7u-bmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USy-jg-I4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-621.5" y="404.5"/>
         </scene>
         <!--Search youtube-->
         <scene sceneID="fca-L5-sT4">
@@ -519,21 +578,21 @@
                                 <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube-cell" rowHeight="200" id="WEp-ko-DBg" customClass="YoutubeSearchTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube-cell" rowHeight="200" id="WEp-ko-DBg" customClass="YoutubeSearchTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WEp-ko-DBg" id="Vsv-Ge-FgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="199"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-js-BBT">
-                                                    <rect key="frame" x="150" y="78" width="214" height="104"/>
+                                                    <rect key="frame" x="150" y="78" width="181" height="104"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Station Name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D22-Ud-IE2">
-                                                    <rect key="frame" x="5" y="8" width="359" height="64"/>
+                                                    <rect key="frame" x="5" y="8" width="326" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="idi-YH-4Uz"/>
                                                     </constraints>
@@ -564,6 +623,7 @@
                                             <outlet property="videoDescription" destination="ixU-js-BBT" id="guN-62-wQb"/>
                                             <outlet property="videoThumbnail" destination="hrv-gS-wDw" id="Tra-gD-xhB"/>
                                             <outlet property="videoTitle" destination="D22-Ud-IE2" id="80I-Jq-ADO"/>
+                                            <segue destination="qdB-7v-ltL" kind="push" id="z0E-zm-uel"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
