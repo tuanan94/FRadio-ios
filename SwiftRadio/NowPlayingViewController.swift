@@ -55,8 +55,19 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup current station
+        let name      = "In development"
+        let streamURL = "http://139.162.100.116:8000/abc.m3u"
+        let imageURL  = ""
+        let desc      = "Short description"
+        let longDesc  = "Long description"
+        
+        let station = RadioStation(name: name, streamURL: streamURL, imageURL: imageURL, desc: desc, longDesc: longDesc)
+        self.currentStation = station
+        
+        
         // Setup handoff functionality - GH
-        setupUserActivity()
+//        setupUserActivity()
         
         // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
@@ -575,17 +586,17 @@ class NowPlayingViewController: UIViewController {
     //*****************************************************************
     // MARK: - Handoff Functionality - GH
     //*****************************************************************
-    
-    @objc func setupUserActivity() {
-        let activity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb ) //"com.graemeharrison.handoff.googlesearch" //NSUserActivityTypeBrowsingWeb
-        userActivity = activity
-        let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
-        let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let searchURL : URL = URL(string: urlStr!)!
-        activity.webpageURL = searchURL
-        userActivity?.becomeCurrent()
-    }
-    
+//
+//    @objc func setupUserActivity() {
+//        let activity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb ) //"com.graemeharrison.handoff.googlesearch" //NSUserActivityTypeBrowsingWeb
+//        userActivity = activity
+//        let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
+//        let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+//        let searchURL : URL = URL(string: urlStr!)!
+//        activity.webpageURL = searchURL
+//        userActivity?.becomeCurrent()
+//    }
+//
     override func updateUserActivityState(_ activity: NSUserActivity) {
         let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
         let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
