@@ -67,7 +67,7 @@ class NowPlayingViewController: UIViewController {
         
         
         // Setup handoff functionality - GH
-//        setupUserActivity()
+        //        setupUserActivity()
         
         // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
@@ -115,7 +115,6 @@ class NowPlayingViewController: UIViewController {
         // View became active
         updateLabels()
         justBecameActive = true
-        updateAlbumArtwork()
     }
     
     deinit {
@@ -192,7 +191,6 @@ class NowPlayingViewController: UIViewController {
         songLabel.repeatCount = 3
         songLabel.animate()
         
-        resetAlbumArtwork()
         track.isPlaying = true
     }
     
@@ -203,7 +201,8 @@ class NowPlayingViewController: UIViewController {
     @IBAction func playPressed() {
         track.isPlaying = true
         playButtonEnable(false)
-        radioPlayer.play()
+        stationDidChange()
+        
         updateLabels()
         
         // songLabel Animation
@@ -231,7 +230,7 @@ class NowPlayingViewController: UIViewController {
     @IBAction func volumeChanged(_ sender:UISlider) {
         mpVolumeSlider.value = sender.value
     }
- 
+    
     @objc func togglePlayPause() {
         if track.isPlaying {
             pausePressed()
@@ -324,178 +323,7 @@ class NowPlayingViewController: UIViewController {
         }
     }
     
-    //*****************************************************************
-    // MARK: - Album Art
-    //*****************************************************************
     
-    @objc func resetAlbumArtwork() {
-        track.artworkLoaded = false
-        track.artworkURL = currentStation.stationImageURL
-        DispatchQueue.main.async { [unowned self] in
-            self.updateAlbumArtwork()
-            self.stationDescLabel.isHidden = false
-        }
-    }
-    
-    @objc func updateAlbumArtwork() {
-        track.artworkLoaded = false
-        if track.artworkURL.range(of: "http") != nil {
-            
-            // Hide station description
-            DispatchQueue.main.async {
-                //self.albumImageView.image = nil
-                self.stationDescLabel.isHidden = false
-            }
-            
-            // Attempt to download album art from an API
-            if let url = URL(string: track.artworkURL) {
-                
-                self.downloadTask = self.albumImageView.loadImageWithURL(url) { (image) in
-                    
-                    // Update track struct
-                    self.track.artworkImage = image
-                    self.track.artworkLoaded = true
-                    
-                    // Turn off network activity indicator
-                    DispatchQueue.main.async {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    }
-                    
-                    // Animate artwork
-                    self.albumImageView.animation = "wobble"
-                    self.albumImageView.duration = 2
-                    DispatchQueue.main.async {
-                        self.albumImageView.animate()
-                        self.stationDescLabel.isHidden = true
-                    
-                        // Update lockscreen
-                        self.updateLockScreen()
-
-                        // Call delegate function that artwork updated
-                        self.delegate?.artworkDidUpdate(self.track)
-                    }
-                }
-            }
-            
-            // Hide the station description to make room for album art
-            if track.artworkLoaded && !self.justBecameActive {
-                self.stationDescLabel.isHidden = true
-                self.justBecameActive = false
-            }
-            
-        } else if track.artworkURL != "" {
-            // Local artwork
-            self.albumImageView.image = UIImage(named: track.artworkURL)
-            track.artworkImage = albumImageView.image
-            track.artworkLoaded = true
-            
-            // Call delegate function that artwork updated
-            self.delegate?.artworkDidUpdate(self.track)
-            
-        } else {
-            // No Station or API art found, use default art
-            self.albumImageView.image = UIImage(named: "albumArt")
-            track.artworkImage = albumImageView.image
-        }
-        
-        // Force app to update display
-        DispatchQueue.main.async {
-            self.view.setNeedsDisplay()
-        }
-    }
-    
-    // Call LastFM or iTunes API to get album art url
-    
-    @objc func queryAlbumArt() {
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        }
-        // Construct either LastFM or iTunes API call URL
-        let queryURL: String
-        
-        switch coverApi {
-        case .lastFm:
-            queryURL = String(format: "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=%@&artist=%@&track=%@&format=json", lastFmApiKey, track.artist, track.title)
-            break
-        case .iTunes:
-            queryURL = String(format: "https://itunes.apple.com/search?term=%@+%@&entity=song", track.artist, track.title)
-            break
-        case .spotify:
-            queryURL = String(format: "https://api.spotify.com/v1/search?query=%@+%@&offset=0&limit=20&type=track", track.artist, track.title)
-            break
-        }
-        
-        let escapedURL = queryURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        
-        // Query API
-        DataManager.getTrackDataWithSuccess(escapedURL!) { (data) in
-            if kDebugLog {
-                print("API SUCCESSFUL RETURN")
-                print("url: \(escapedURL!)")
-            }
-            
-            let json = JSON(data: data!)
-            
-            switch coverApi {
-            case .lastFm:
-                // Get Largest Sized LastFM Image
-                if let imageArray = json["track"]["album"]["image"].array {
-                    
-                    let arrayCount = imageArray.count
-                    let lastImage = imageArray[arrayCount - 1]
-                    
-                    if let artURL = lastImage["#text"].string {
-                        
-                        // Check for Default Last FM Image
-                        if artURL.range(of: "/noimage/") != nil {
-                            self.resetAlbumArtwork()
-                            
-                        } else {
-                            // LastFM image found!
-                            self.track.artworkURL = artURL
-                            self.track.artworkLoaded = true
-                            self.updateAlbumArtwork()
-                        }
-                        
-                    } else {
-                        self.resetAlbumArtwork()
-                    }
-                } else {
-                    self.resetAlbumArtwork()
-                }
-                
-                break
-            case .iTunes:
-                // Use iTunes API. Images are 100px by 100px
-                if let artURL = json["results"][0]["artworkUrl100"].string {
-                    
-                    if kDebugLog { print("iTunes artURL: \(artURL)") }
-                    
-                    self.track.artworkURL = artURL
-                    self.track.artworkLoaded = true
-                    self.updateAlbumArtwork()
-                } else {
-                    self.resetAlbumArtwork()
-                }
-                break
-            case .spotify:
-                // Use Spotify API. Please read terms of use here https://developer.spotify.com/developer-terms-of-use/
-                if let artURL = json["tracks"]["items"][0]["album"]["images"][0]["url"].string {
-                    
-                    if kDebugLog { print("spotify artURL: \(artURL)") }
-                    
-                    self.track.artworkURL = artURL
-                    self.track.artworkLoaded = true
-                    self.updateAlbumArtwork()
-                } else {
-                    //print("failure")
-                    self.resetAlbumArtwork()
-                }
-                break
-            }
-            
-        }
-    }
     
     //*****************************************************************
     // MARK: - Segue
@@ -586,17 +414,17 @@ class NowPlayingViewController: UIViewController {
     //*****************************************************************
     // MARK: - Handoff Functionality - GH
     //*****************************************************************
-//
-//    @objc func setupUserActivity() {
-//        let activity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb ) //"com.graemeharrison.handoff.googlesearch" //NSUserActivityTypeBrowsingWeb
-//        userActivity = activity
-//        let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
-//        let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-//        let searchURL : URL = URL(string: urlStr!)!
-//        activity.webpageURL = searchURL
-//        userActivity?.becomeCurrent()
-//    }
-//
+    //
+    //    @objc func setupUserActivity() {
+    //        let activity = NSUserActivity(activityType: NSUserActivityTypeBrowsingWeb ) //"com.graemeharrison.handoff.googlesearch" //NSUserActivityTypeBrowsingWeb
+    //        userActivity = activity
+    //        let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
+    //        let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+    //        let searchURL : URL = URL(string: urlStr!)!
+    //        activity.webpageURL = searchURL
+    //        userActivity?.becomeCurrent()
+    //    }
+    //
     override func updateUserActivityState(_ activity: NSUserActivity) {
         let url = "https://www.google.com/search?q=\(self.artistLabel.text!)+\(self.songLabel.text!)"
         let urlStr = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
@@ -627,54 +455,22 @@ extension NowPlayingViewController: CustomAVPlayerItemDelegate {
             startNowPlayingAnimation()
             let firstMeta: AVMetadataItem = metaDatas.first!
             let metaData = firstMeta.value as! String
-            var stringParts = [String]()
-            if metaData.range(of: " - ") != nil {
-                stringParts = metaData.components(separatedBy: " - ")
-            } else {
-                stringParts = metaData.components(separatedBy: "-")
-            }
             
-            // Set artist & songvariables
-            let currentSongName = track.title
-            track.artist = stringParts[0].decodeAll()
-            track.title = stringParts[0].decodeAll()
-            
-            if stringParts.count > 1 {
-                track.title = stringParts[1].decodeAll()
-            }
-            
-            if track.artist == "" && track.title == "" {
-                track.artist = currentStation.stationDesc
-                track.title = currentStation.stationName
-            }
+            track.title = metaData
             
             DispatchQueue.main.async {
-                if currentSongName != self.track.title {
-                    if kDebugLog {
-                        print("METADATA artist: \(self.track.artist) | title: \(self.track.title)")
-                    }
-                    // Update Labels
-                    self.artistLabel.text = self.track.artist
-                    self.songLabel.text = self.track.title
-                    self.updateUserActivityState(self.userActivity!)
-                    
-                    // songLabel animation
-                    self.songLabel.animation = "zoomIn"
-                    self.songLabel.duration = 1.5
-                    self.songLabel.damping = 1
-                    self.songLabel.animate()
-                    
-                    // Update Stations Screen
-                    self.delegate?.songMetaDataDidUpdate(self.track)
-                    
-                    // Query API for album art
-                    self.resetAlbumArtwork()
-                    self.queryAlbumArt()
-                    
+                if (self.radioPlayer.rate == 0 || self.radioPlayer.error != nil){
+                    self.stationDidChange()
                 }
-                self.artistLabel.text = self.track.artist
                 self.songLabel.text = self.track.title
-
+                self.songLabel.animation = "zoomIn"
+                self.songLabel.duration = 1.5
+                self.songLabel.damping = 1
+                self.songLabel.animate()
+                
+                //                self.artistLabel.text = self.track.artist
+                //                self.songLabel.text = self.track.title
+                
             }
         }
     }

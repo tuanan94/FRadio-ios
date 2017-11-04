@@ -39,7 +39,7 @@ class YoutubeSearchViewController: UIViewController {
     }
     
     @IBAction func performSearch(_ sender: Any) {
-        var keyword: String = searchKeyword.text!.forSorting
+        var keyword: String = searchKeyword.text!
         YoutubeAPI.get_search(query:keyword){ (result) -> () in
             self.reloadSearchTableView(result: result as! NSDictionary)
         }

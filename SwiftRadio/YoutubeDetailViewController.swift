@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class YoutubeDetailViewController: UIViewController {
     var videoDetails: NSDictionary!
@@ -35,7 +36,19 @@ class YoutubeDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func process_btn_create_song(_ sender: Any) {
+        let id = videoDetails.object(forKey: "id") as! NSDictionary
+        let videoId = id["videoId"] as! String
+        let parameters = ["id":videoId]
+        Alamofire.request("http://139.162.100.116:3000/create_song", method: .post , parameters: parameters).responseString { response in
+            debugPrint(response)
+            let json = response.result.value as? [String: Any]
+            print(json)
+        }
+        print("create song")
 
+    }
+    
     /*
     // MARK: - Navigation
 

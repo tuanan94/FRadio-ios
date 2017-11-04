@@ -22,10 +22,7 @@ class YoutubeAPI {
             if let json = response.result.value {
                 completion(json)
             }
-            
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//            }
         }
     }
+
 }
