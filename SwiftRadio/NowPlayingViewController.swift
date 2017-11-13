@@ -10,6 +10,7 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var stationDescLabel: UILabel!
     @IBOutlet weak var volumeParentView: UIView!
     
+    @IBOutlet weak var recommendSong: UIButton!
     @objc var iPhone4 = false
     @objc var nowPlayingImageView: UIImageView!
     static var radioPlayer: AVPlayer!
@@ -23,9 +24,14 @@ class NowPlayingViewController: UIViewController {
         }else{
             play()
         }
+        reformButton()
     }
     
-    
+    private func reformButton(){
+        recommendSong.layer.cornerRadius = 10;
+        recommendSong.clipsToBounds = true;
+        title = "FRadio"
+    }
     
     
     @IBAction func playPausePress(_ sender: Any) {

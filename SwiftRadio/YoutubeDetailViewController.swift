@@ -14,8 +14,11 @@ class YoutubeDetailViewController: UIViewController {
     
     @IBOutlet weak var videoImage: UIImageView!
     
+    @IBOutlet weak var btnPushSong: UIButton!
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var videoDescription: UILabel!
+    var timer:Timer!
+    var pressCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -28,25 +31,40 @@ class YoutubeDetailViewController: UIViewController {
         videoImage.setImage(urlString: highThumbnailURL, contentMode: UIViewContentMode.scaleAspectFit, placeholderImage: nil)
         videoTitle.text = title
         videoDescription.text = description
-        // Do any additional setup after loading the view.
+        btnPushSong.layer.cornerRadius = 10;
+        btnPushSong.clipsToBounds = true;
+        self.title = title
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func btnTouchDown(_ sender: Any) {
+        print("start")
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                             target: self,
+                             selector: #selector(self.rapidFire),
+                             userInfo: nil,
+                             repeats: true)
+        pressCount = 0;
+    }
     
-    @IBAction func process_btn_create_song(_ sender: Any) {
-        let id = videoDetails.object(forKey: "id") as! NSDictionary
-        let videoId = id["videoId"] as! String
-        let parameters = ["id":videoId]
-//        Alamofire.request("http://139.162.100.116:3000/create_song", method: .post , parameters: parameters).responseString { response in
-//            debugPrint(response)
-//            let json = response.result.value as? [String: Any]
-//            print(json)
-//        }
-        print("create song")
-
+    @objc func rapidFire() {
+        if (pressCount == 3) {
+            performSegue(withIdentifier: "goToSongRequesting", sender: nil)
+            timer.invalidate()
+            btnPushSong.setTitle("Hold me to push this article", for: UIControlState.normal)
+        }
+        self.pressCount+=1;
+        btnPushSong.setTitle("\(pressCount)" + "...", for: UIControlState.normal)
+        print("bang")
+    }
+    
+    @IBAction func btnTouchUp(_ sender: Any) {
+        print("stop")
+        timer.invalidate()
+        btnPushSong.setTitle("Hold me to push this article", for: UIControlState.normal)
     }
     
     /*

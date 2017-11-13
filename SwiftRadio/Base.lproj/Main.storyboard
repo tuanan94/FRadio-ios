@@ -35,20 +35,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumArt" translatesAutoresizingMaskIntoConstraints="NO" id="obn-8m-awZ" userLabel="AlbumArt" customClass="SpringImageView" customModule="SwiftRadio" customModuleProvider="target">
-                                <rect key="frame" x="70" y="57" width="235" height="180"/>
+                                <rect key="frame" x="70" y="101" width="235" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="hCD-tK-vVP"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCK-L1-2Sc" userLabel="PlayerControls View">
-                                <rect key="frame" x="119" y="254" width="138" height="70"/>
+                                <rect key="frame" x="119" y="298" width="138" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="Iau-Ec-PKR"/>
                                     <constraint firstAttribute="height" constant="70" id="ZpW-Ox-31t"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-OX-Xr1" userLabel="Station Desc Label">
-                                <rect key="frame" x="70" y="205" width="235" height="21"/>
+                                <rect key="frame" x="70" y="249" width="235" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wJP-em-2hX"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM3-Zh-rNl">
                                 <rect key="frame" x="0.0" y="635" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.69156244493680752" green="0.80578494245644361" blue="0.96605812823834192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96334363949977075" green="0.96988341968911918" blue="0.95671561880516265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Recommend song from youtube">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -79,8 +79,8 @@
                                     <action selector="playPausePress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Iu4-Or-kYb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
-                                <rect key="frame" x="123" y="525" width="130.5" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My heart will go on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
+                                <rect key="frame" x="82" y="525" width="211" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -116,6 +116,7 @@
                         <outlet property="albumHeightConstraint" destination="hCD-tK-vVP" id="VlU-n5-VPe"/>
                         <outlet property="albumImageView" destination="obn-8m-awZ" id="13r-WO-VAs"/>
                         <outlet property="playButton" destination="D3H-co-r2v" id="7vv-MG-kTG"/>
+                        <outlet property="recommendSong" destination="dM3-Zh-rNl" id="suI-sP-oFG"/>
                         <outlet property="songLabel" destination="KC8-ZG-rx5" id="tNh-3K-qWW"/>
                         <outlet property="stationDescLabel" destination="RA9-OX-Xr1" id="uAM-NB-RRM"/>
                     </connections>
@@ -163,34 +164,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are we doing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjb-yc-g78">
-                                <rect key="frame" x="16" y="20" width="343" height="23"/>
+                                <rect key="frame" x="16" y="64" width="343" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Download your selected youtube video" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfI-wx-rPZ">
-                                <rect key="frame" x="16" y="51" width="343" height="16"/>
+                                <rect key="frame" x="16" y="95" width="343" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Convert from video format to audio format" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74y-nj-UkD">
-                                <rect key="frame" x="16" y="75" width="343" height="16"/>
+                                <rect key="frame" x="16" y="119" width="343" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Put song to to-play list" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-jn-h0E">
-                                <rect key="frame" x="16" y="99" width="343" height="16"/>
+                                <rect key="frame" x="16" y="143" width="343" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="I2g-Wn-AH0">
-                                <rect key="frame" x="177" y="122.5" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="I2g-Wn-AH0">
+                                <rect key="frame" x="177" y="166.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwD-DW-sCQ">
-                                <rect key="frame" x="83" y="158.5" width="210" height="41"/>
+                                <rect key="frame" x="83" y="202.5" width="210" height="41"/>
                                 <string key="text">Please wait for me a minute
 I will show your the result</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -210,7 +211,7 @@ Your song will be played soon</string>
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="4K7-HT-Bs6"/>
+                                    <action selector="resultBtnClick:" destination="VaE-Np-ssb" eventType="touchUpInside" id="gHF-rm-SBP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -260,14 +261,14 @@ Your song will be played soon</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeU-Pq-JVN">
-                                <rect key="frame" x="-20" y="0.0" width="415" height="667"/>
+                                <rect key="frame" x="-20" y="44" width="415" height="623"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo est, consectetur et dolor eu, molestie pellentesque leo." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-AV-E6x">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo est, consectetur et dolor eu, molestie pellentesque leo." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGx-AV-E6x">
                                         <rect key="frame" x="36" y="289.5" width="343" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="vsM-np-8mz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -277,22 +278,24 @@ Your song will be played soon</string>
                                             <constraint firstAttribute="width" secondItem="n6H-2F-9Ad" secondAttribute="height" multiplier="480:360" id="HvT-LH-IsI"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-ex-sK6">
-                                        <rect key="frame" x="36" y="354.5" width="343" height="122"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-ex-sK6">
+                                        <rect key="frame" x="36" y="354.5" width="343" height="86"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo est, consectetur et dolor eu, molestie pellentesque leo. Vestibulum vel augue in ex suscipit scelerisque luctus laoreet urna. Suspendisse tristique nulla sit amet nisl vestibulum finibus. Quisque imperdiet, mauris non rutrum pharetra, turpis neque varius est, eget viverra lacus ante sit amet sem</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2Q-GH-S6B">
-                                        <rect key="frame" x="36" y="492.5" width="343" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <state key="normal" title="I want to hear this song!!">
+                                        <rect key="frame" x="36" y="456.5" width="343" height="30"/>
+                                        <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Hold me to push this article">
+                                            <color key="titleColor" red="0.96334363950000002" green="0.96988341970000003" blue="0.9567156188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="process_btn_create_song:" destination="qdB-7v-ltL" eventType="touchUpInside" id="0LO-MR-XoG"/>
-                                            <segue destination="VaE-Np-ssb" kind="push" id="2ZO-CO-gbE"/>
+                                            <action selector="btnTouchDown:" destination="qdB-7v-ltL" eventType="touchDown" id="o3Z-hi-SVh"/>
+                                            <action selector="btnTouchUp:" destination="qdB-7v-ltL" eventType="touchUpInside" id="CAL-hM-mbI"/>
+                                            <action selector="btnTouchUp:" destination="qdB-7v-ltL" eventType="touchUpOutside" id="MKY-rz-sa2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -324,14 +327,16 @@ Your song will be played soon</string>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="lSE-HE-xtm" userLabel="aa"/>
                     <connections>
+                        <outlet property="btnPushSong" destination="d2Q-GH-S6B" id="Emv-cO-luI"/>
                         <outlet property="videoDescription" destination="lhf-ex-sK6" id="OFb-a7-1WB"/>
                         <outlet property="videoImage" destination="n6H-2F-9Ad" id="WoU-hr-eop"/>
                         <outlet property="videoTitle" destination="lGx-AV-E6x" id="uj4-7u-bmM"/>
+                        <segue destination="VaE-Np-ssb" kind="push" identifier="goToSongRequesting" id="sIp-kR-CEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USy-jg-I4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-621.5" y="404.5"/>
+            <point key="canvasLocation" x="-693" y="444"/>
         </scene>
         <!--Search youtube-->
         <scene sceneID="fca-L5-sT4">
@@ -346,27 +351,36 @@ Your song will be played soon</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiY-je-GMb">
-                                <rect key="frame" x="311" y="28" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                                <rect key="frame" x="311" y="72" width="48" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.96334363950000002" green="0.96988341970000003" blue="0.9567156188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius ">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="performSearch:" destination="83L-Wm-tJ1" eventType="touchUpInside" id="MEv-sP-M39"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keyword: name, singer, genre..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOQ-z0-Moi">
-                                <rect key="frame" x="16" y="29" width="287" height="30"/>
+                                <rect key="frame" x="16" y="73" width="287" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-8v-4ch">
-                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube-cell" rowHeight="200" id="WEp-ko-DBg" customClass="YoutubeSearchTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WEp-ko-DBg" id="Vsv-Ge-FgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="199"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-js-BBT">
@@ -441,6 +455,7 @@ Your song will be played soon</string>
         <!--Info View Controller-->
         <scene sceneID="abW-KU-RWK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eop-Yu-mRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bg5-7y-kdG" userLabel="Info View Controller" customClass="InfoDetailViewController" customModule="SwiftRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uln-hJ-iAw"/>
@@ -483,7 +498,7 @@ Your song will be played soon</string>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-bZ-7Pz">
                                 <rect key="frame" x="16" y="611" width="343" height="36"/>
-                                <color key="backgroundColor" red="0.15054957568645477" green="0.15034264326095581" blue="0.15674735605716705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Gpj-99-oS5"/>
                                 </constraints>
@@ -536,7 +551,6 @@ Your song will be played soon</string>
                         <outlet property="stationNameLabel" destination="IEm-3W-Db6" id="SaS-2m-bQw"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eop-Yu-mRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1368" y="188"/>
         </scene>
@@ -549,8 +563,4 @@ Your song will be played soon</string>
         <image name="default-thumbnail" width="640" height="480"/>
         <image name="stationImage" width="120" height="75"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="pbi-Xj-7Rb"/>
-        <segue reference="4K7-HT-Bs6"/>
-    </inferredMetricsTieBreakers>
 </document>

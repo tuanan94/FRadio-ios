@@ -23,9 +23,6 @@ class SongRequestingViewController: UIViewController {
         // Send request
         let parameters = ["id":videoId as String]
         Alamofire.request(TARGET_URL + ":3000/create_song", method: .post , parameters: parameters).responseString { response in
-            debugPrint(response)
-            let json = response.result.value
-            print(json as Any)
             if (response.response?.statusCode != 200){
                 self.resultBtn.backgroundColor = self.UIColorFromHex(rgbValue: 0xf99595)
                 self.resultBtn.setTitle("Something went wrong.\n I will investigate this case asap", for: UIControlState.normal)
@@ -35,10 +32,14 @@ class SongRequestingViewController: UIViewController {
             self.resultBtn.titleLabel!.lineBreakMode = .byWordWrapping
             self.resultBtn.titleLabel!.textAlignment = .center
             self.resultBtn.isHidden = false
+            self.loading.stopAnimating()
         }
         
     }
     
+    @IBAction func resultBtnClick(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
