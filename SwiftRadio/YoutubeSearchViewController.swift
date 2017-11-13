@@ -21,7 +21,6 @@ class YoutubeSearchViewController: UIViewController {
         tableView.delegate = delegate
         tableView.reloadData()
         YoutubeAPI.get_search(query: ""){ (result) -> () in
-            print(result)
             self.reloadSearchTableView(result: result as! NSDictionary)
         }
         super.viewDidLoad()
@@ -35,7 +34,6 @@ class YoutubeSearchViewController: UIViewController {
     func reloadSearchTableView(result: NSDictionary){
         dataSource?.setData(data: result)
         tableView.reloadData()
-        print("Reload tableView")
     }
     
     @IBAction func performSearch(_ sender: Any) {
@@ -43,7 +41,6 @@ class YoutubeSearchViewController: UIViewController {
         YoutubeAPI.get_search(query:keyword){ (result) -> () in
             self.reloadSearchTableView(result: result as! NSDictionary)
         }
-        print("search")
     }
     
 
