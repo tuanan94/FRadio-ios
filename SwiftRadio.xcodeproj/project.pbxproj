@@ -10,6 +10,7 @@
 		1BEE0C17B84C003547A59B22 /* Pods_SwiftRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */; };
 		2554A6D21D461B9600B63662 /* CustomAVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2554A6D11D461B9600B63662 /* CustomAVPlayerItem.swift */; };
 		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
+		670E77DD1FB80779002362CF /* SongRequestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E77DC1FB80779002362CF /* SongRequestingViewController.swift */; };
 		673078AD1FA4E05E009943AE /* YoutubeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */; };
 		673078AF1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */; };
 		674EE7BB1FA579EA0084C256 /* YoutubeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7BA1FA579EA0084C256 /* YoutubeAPI.swift */; };
@@ -94,6 +95,7 @@
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EADA6D1CC2DADA6398F0395 /* Pods-SwiftRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		57C0D1307BA064D6896FD03B /* Pods-SwiftRadioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRadioUITests/Pods-SwiftRadioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		670E77DC1FB80779002362CF /* SongRequestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequestingViewController.swift; sourceTree = "<group>"; };
 		673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchViewController.swift; sourceTree = "<group>"; };
 		673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchTableViewCell.swift; sourceTree = "<group>"; };
 		674EE7BA1FA579EA0084C256 /* YoutubeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeAPI.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		674EE7C21FA57E020084C256 /* SwiftRadioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		674EE7CC1FA581B30084C256 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDetailViewController.swift; sourceTree = "<group>"; };
+		67EA67BA1FB7EE5E008F1AC8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E11A1ABF6FEA00312E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		5B4711D65A4ADAEA6198F812 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67EA67BA1FB7EE5E008F1AC8 /* Alamofire.framework */,
 				75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */,
 				9EC29080B34216A1F10ADFB3 /* Pods_SwiftRadioUITests.framework */,
 			);
@@ -294,6 +298,7 @@
 				94452E4E1AD6F24700BFE7A5 /* PopUpMenuViewController.swift */,
 				673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */,
 				674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */,
+				670E77DC1FB80779002362CF /* SongRequestingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -464,7 +469,7 @@
 					};
 					9409E1151ABF6FEA00312E2B = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 4MAKVC88GJ;
+						DevelopmentTeam = 39M6848BR5;
 						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -527,7 +532,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2253720BCFDB370DDF65AD62 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -560,7 +565,7 @@
 		};
 		7731E5DFE5D734534205A32E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -593,7 +598,7 @@
 		};
 		A697A79B2A9AE61199DAC5EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -654,6 +659,7 @@
 				94DB0AA31B98B762005ED993 /* SpringAnimation.swift in Sources */,
 				94DB0A961B98B762005ED993 /* DesignableLabel.swift in Sources */,
 				94DB0AA11B98B762005ED993 /* SoundPlayer.swift in Sources */,
+				670E77DD1FB80779002362CF /* SongRequestingViewController.swift in Sources */,
 				94DB0A9D1B98B762005ED993 /* KeyboardLayoutConstraint.swift in Sources */,
 				94DB0AA51B98B762005ED993 /* SpringImageView.swift in Sources */,
 				949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */,
@@ -923,7 +929,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4MAKVC88GJ;
+				DEVELOPMENT_TEAM = 39M6848BR5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftRadio",
@@ -931,7 +937,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.an.SwiftRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -948,7 +954,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4MAKVC88GJ;
+				DEVELOPMENT_TEAM = 39M6848BR5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftRadio",
@@ -956,7 +962,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.an.SwiftRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fradio;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;

@@ -40,23 +40,25 @@ class YoutubeDetailViewController: UIViewController {
         let id = videoDetails.object(forKey: "id") as! NSDictionary
         let videoId = id["videoId"] as! String
         let parameters = ["id":videoId]
-        Alamofire.request("http://139.162.100.116:3000/create_song", method: .post , parameters: parameters).responseString { response in
-            debugPrint(response)
-            let json = response.result.value as? [String: Any]
-            print(json)
-        }
+//        Alamofire.request("http://139.162.100.116:3000/create_song", method: .post , parameters: parameters).responseString { response in
+//            debugPrint(response)
+//            let json = response.result.value as? [String: Any]
+//            print(json)
+//        }
         print("create song")
 
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+     MARK: - Navigation
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let id = videoDetails.object(forKey: "id") as! NSDictionary
+        let videoId = id["videoId"] as! String
+        var songRequestingController = segue.destination as! SongRequestingViewController
+        songRequestingController.videoId = videoId
+        print("go to request controller")
+        
+    }
 
 }

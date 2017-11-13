@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // MPNowPlayingInfoCenter
-        UIApplication.shared.beginReceivingRemoteControlEvents()
+        // Access the shared, singleton audio session instance
+        let session = AVAudioSession.sharedInstance()
+        do {
+            // Configure the audio session for movie playback
+            if #available(iOS 10.0, *) {
+                try session.setCategory(AVAudioSessionCategoryPlayback,
+                                        mode: AVAudioSessionModeMoviePlayback,
+                                        options: [])
+            } else {
+            }
+        } catch let error as NSError {
+            print("Failed to set the audio session category and mode: \(error.localizedDescription)")
+        }
+
+        
         
         // Make status bar white
         UINavigationBar.appearance().barStyle = .black
