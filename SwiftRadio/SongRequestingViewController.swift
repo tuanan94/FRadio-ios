@@ -13,33 +13,29 @@ class SongRequestingViewController: UIViewController {
     let TARGET_URL = "http://fradio.site"
     var videoId: String!
     
-    @IBOutlet weak var resultBtn: UIButton!
-    @IBOutlet weak var loading: UIActivityIndicatorView!
-    
+    @IBOutlet weak var webview: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("songrequestdidload")
-        resultBtn.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationItem.backBarButtonItem?.isEnabled = false
+        let urlPath = Bundle.main.path(forResource: "request_waiting", ofType: "html")
+        webview.loadRequest(URLRequest.init(url: URL(fileURLWithPath: urlPath!)))
+        webview.scrollView.isScrollEnabled = false
         // Send request
         let parameters = ["id":videoId as String]
-        Alamofire.request(TARGET_URL + ":3000/create_song", method: .post , parameters: parameters).responseString { response in
+        Alamofire.request(TARGET_URL + "/api/create_song", method: .post , parameters: parameters).responseString { response in
             if (response.response?.statusCode != 200){
-                self.resultBtn.backgroundColor = self.UIColorFromHex(rgbValue: 0xf99595)
-                self.resultBtn.setTitle("Something went wrong.\n I will investigate this case asap", for: UIControlState.normal)
+                print("error")
+                self.performSegue(withIdentifier: "backtotop", sender: nil)
             }else{
-                // Leave button as default
+                print("success")
+                self.performSegue(withIdentifier: "backtotop", sender: nil)
+
             }
-            self.resultBtn.titleLabel!.lineBreakMode = .byWordWrapping
-            self.resultBtn.titleLabel!.textAlignment = .center
-            self.resultBtn.isHidden = false
-            self.loading.stopAnimating()
         }
         
     }
     
-    @IBAction func resultBtnClick(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
     func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0

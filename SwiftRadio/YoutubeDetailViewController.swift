@@ -48,6 +48,7 @@ class YoutubeDetailViewController: UIViewController {
                              userInfo: nil,
                              repeats: true)
         pressCount = 0;
+        btnPushSong.setTitle("\(pressCount)" + "...", for: UIControlState.normal)
     }
     
     @objc func rapidFire() {

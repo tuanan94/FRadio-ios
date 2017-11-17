@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1BEE0C17B84C003547A59B22 /* Pods_SwiftRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */; };
-		2554A6D21D461B9600B63662 /* CustomAVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2554A6D11D461B9600B63662 /* CustomAVPlayerItem.swift */; };
 		2C5545BD1C1124DE00728469 /* SwiftRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */; };
 		670E77DD1FB80779002362CF /* SongRequestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E77DC1FB80779002362CF /* SongRequestingViewController.swift */; };
 		673078AD1FA4E05E009943AE /* YoutubeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */; };
@@ -17,20 +16,17 @@
 		674EE7BD1FA57CA70084C256 /* YoutubeAPITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7BC1FA57CA70084C256 /* YoutubeAPITestCase.swift */; };
 		674EE7CD1FA581B30084C256 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7CC1FA581B30084C256 /* Request.swift */; };
 		674EE7CF1FA5C3820084C256 /* YoutubeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */; };
+		67CAA2DC1FBF0AF300E9C2DF /* RequestWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CAA2DB1FBF0AF300E9C2DF /* RequestWaitingViewController.swift */; };
+		67CAA2E01FBF251B00E9C2DF /* request_waiting.html in Resources */ = {isa = PBXBuildFile; fileRef = 67CAA2DF1FBF251B00E9C2DF /* request_waiting.html */; };
+		67E106621FBF50EA0090D1A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67E106611FBF50EA0090D1A0 /* GoogleService-Info.plist */; };
 		9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */; };
 		9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1221ABF6FEA00312E2B /* Main.storyboard */; };
 		9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
 		9409E1401ABF78B000312E2B /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E13F1ABF78B000312E2B /* NowPlayingViewController.swift */; };
-		945DB3C21AD58E3A00495EBB /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 945DB3C11AD58E3A00495EBB /* stations.json */; };
 		945DB3C51AD5A6E200495EBB /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */; };
-		94817DFB1B547D5700D3FA23 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94817DFA1B547D5700D3FA23 /* Player.swift */; };
 		949BBB401ACC9DEE005B7C26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BBB3F1ACC9DEE005B7C26 /* DataManager.swift */; };
 		949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */; };
-		94AC70AE1AD05C6200652982 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC70AD1AD05C6200652982 /* RadioStation.swift */; };
-		94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */; };
 		94D260961B45E3FA00DE671C /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260951B45E3FA00DE671C /* AnimationFrames.swift */; };
-		94D260981B45E8B800DE671C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260971B45E8B800DE671C /* Track.swift */; };
-		94D30EA71AD07A880024FE96 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */; };
 		94DB0A901B98B762005ED993 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB0A721B98B762005ED993 /* AsyncButton.swift */; };
 		94DB0A911B98B762005ED993 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB0A731B98B762005ED993 /* AsyncImageView.swift */; };
 		94DB0A921B98B762005ED993 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DB0A741B98B762005ED993 /* AutoTextView.swift */; };
@@ -85,7 +81,6 @@
 
 /* Begin PBXFileReference section */
 		15E6185645751A078D553C44 /* Pods-SwiftRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRadio.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio.release.xcconfig"; sourceTree = "<group>"; };
-		2554A6D11D461B9600B63662 /* CustomAVPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAVPlayerItem.swift; sourceTree = "<group>"; };
 		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5545BC1C1124DE00728469 /* SwiftRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRadioUITests.swift; sourceTree = "<group>"; };
 		2C5545BE1C1124DE00728469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +94,10 @@
 		674EE7C21FA57E020084C256 /* SwiftRadioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRadioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		674EE7CC1FA581B30084C256 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDetailViewController.swift; sourceTree = "<group>"; };
+		67CAA2DB1FBF0AF300E9C2DF /* RequestWaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWaitingViewController.swift; sourceTree = "<group>"; };
+		67CAA2DF1FBF251B00E9C2DF /* request_waiting.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = request_waiting.html; sourceTree = "<group>"; };
+		67E106611FBF50EA0090D1A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67E106631FBF50ED0090D1A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67EA67BA1FB7EE5E008F1AC8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75498EEE299D3340E6262444 /* Pods_SwiftRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,16 +106,10 @@
 		9409E1231ABF6FEA00312E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9409E1251ABF6FEA00312E2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9409E13F1ABF78B000312E2B /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
-		945DB3C11AD58E3A00495EBB /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
-		94817DFA1B547D5700D3FA23 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		949BBB3F1ACC9DEE005B7C26 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
-		94AC70AD1AD05C6200652982 /* RadioStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
-		94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftRadio-Settings.swift"; sourceTree = "<group>"; };
 		94D260951B45E3FA00DE671C /* AnimationFrames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationFrames.swift; sourceTree = "<group>"; };
-		94D260971B45E8B800DE671C /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		94DB0A721B98B762005ED993 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		94DB0A731B98B762005ED993 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		94DB0A741B98B762005ED993 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -207,6 +200,7 @@
 			children = (
 				949BBB411ACCA2B6005B7C26 /* Libraries */,
 				9409E1181ABF6FEA00312E2B /* SwiftRadio */,
+				67E106631FBF50ED0090D1A0 /* GoogleService-Info.plist */,
 				2C5545BB1C1124DE00728469 /* SwiftRadioUITests */,
 				9409E1171ABF6FEA00312E2B /* Products */,
 				F8ACFB5DCDEDDB63FC4583C6 /* Pods */,
@@ -227,6 +221,7 @@
 		9409E1181ABF6FEA00312E2B /* SwiftRadio */ = {
 			isa = PBXGroup;
 			children = (
+				67E106611FBF50EA0090D1A0 /* GoogleService-Info.plist */,
 				94D260941B45E0BA00DE671C /* UI Helpers */,
 				94E976191B1A8BFB00F52B1E /* Model */,
 				94823F861B5576F4004EC711 /* Data */,
@@ -245,9 +240,9 @@
 		9409E1191ABF6FEA00312E2B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				67CAA2DF1FBF251B00E9C2DF /* request_waiting.html */,
 				B90086461BBE40AF00E5372C /* MediaPlayer.framework */,
 				9409E11A1ABF6FEA00312E2B /* Info.plist */,
-				94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -255,7 +250,6 @@
 		94823F861B5576F4004EC711 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				945DB3C11AD58E3A00495EBB /* stations.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -287,6 +281,7 @@
 				673078AC1FA4E05E009943AE /* YoutubeSearchViewController.swift */,
 				674EE7CE1FA5C3820084C256 /* YoutubeDetailViewController.swift */,
 				670E77DC1FB80779002362CF /* SongRequestingViewController.swift */,
+				67CAA2DB1FBF0AF300E9C2DF /* RequestWaitingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -295,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */,
-				94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */,
 				673078AE1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift */,
 			);
 			name = Cells;
@@ -352,10 +346,6 @@
 		94E976191B1A8BFB00F52B1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				94AC70AD1AD05C6200652982 /* RadioStation.swift */,
-				94817DFA1B547D5700D3FA23 /* Player.swift */,
-				94D260971B45E8B800DE671C /* Track.swift */,
-				2554A6D11D461B9600B63662 /* CustomAVPlayerItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -506,12 +496,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				945DB3C21AD58E3A00495EBB /* stations.json in Resources */,
+				67CAA2E01FBF251B00E9C2DF /* request_waiting.html in Resources */,
 				9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */,
 				945DB3C51AD5A6E200495EBB /* NothingFoundCell.xib in Resources */,
 				94DB0A9F1B98B762005ED993 /* LoadingView.xib in Resources */,
 				94DB0A9C1B98B762005ED993 /* Info.plist in Resources */,
 				9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */,
+				67E106621FBF50EA0090D1A0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,10 +583,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRadio/Pods-SwiftRadio-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -654,12 +651,10 @@
 				673078AF1FA4ECD1009943AE /* YoutubeSearchTableViewCell.swift in Sources */,
 				94DB0A981B98B762005ED993 /* DesignableTextField.swift in Sources */,
 				674EE7CF1FA5C3820084C256 /* YoutubeDetailViewController.swift in Sources */,
-				94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */,
 				94DB0A941B98B762005ED993 /* DesignableButton.swift in Sources */,
 				C6BB97EB1E0B515600282D80 /* Extensions.swift in Sources */,
 				94DB0AA61B98B762005ED993 /* SpringLabel.swift in Sources */,
 				94DB0A901B98B762005ED993 /* AsyncButton.swift in Sources */,
-				94D30EA71AD07A880024FE96 /* StationTableViewCell.swift in Sources */,
 				9409E1401ABF78B000312E2B /* NowPlayingViewController.swift in Sources */,
 				94DB0A911B98B762005ED993 /* AsyncImageView.swift in Sources */,
 				674EE7BB1FA579EA0084C256 /* YoutubeAPI.swift in Sources */,
@@ -669,14 +664,13 @@
 				94DB0AAA1B98B762005ED993 /* TransitionManager.swift in Sources */,
 				94DB0A9B1B98B762005ED993 /* ImageLoader.swift in Sources */,
 				674EE7CD1FA581B30084C256 /* Request.swift in Sources */,
-				94D260981B45E8B800DE671C /* Track.swift in Sources */,
 				94DB0A951B98B762005ED993 /* DesignableImageView.swift in Sources */,
+				67CAA2DC1FBF0AF300E9C2DF /* RequestWaitingViewController.swift in Sources */,
 				94DB0A921B98B762005ED993 /* AutoTextView.swift in Sources */,
 				94DB0AA91B98B762005ED993 /* SpringView.swift in Sources */,
 				94DB0AAB1B98B762005ED993 /* TransitionZoom.swift in Sources */,
 				9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */,
 				673078AD1FA4E05E009943AE /* YoutubeSearchViewController.swift in Sources */,
-				2554A6D21D461B9600B63662 /* CustomAVPlayerItem.swift in Sources */,
 				94ECF2671B94D80600D120A8 /* SwiftyJSON.swift in Sources */,
 				94D260961B45E3FA00DE671C /* AnimationFrames.swift in Sources */,
 				94DB0A9E1B98B762005ED993 /* LoadingView.swift in Sources */,
@@ -687,8 +681,6 @@
 				94DB0AA81B98B762005ED993 /* SpringTextView.swift in Sources */,
 				94DB0A991B98B762005ED993 /* DesignableTextView.swift in Sources */,
 				94DB0AA21B98B762005ED993 /* Spring.swift in Sources */,
-				94AC70AE1AD05C6200652982 /* RadioStation.swift in Sources */,
-				94817DFB1B547D5700D3FA23 /* Player.swift in Sources */,
 				94DB0A9A1B98B762005ED993 /* DesignableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

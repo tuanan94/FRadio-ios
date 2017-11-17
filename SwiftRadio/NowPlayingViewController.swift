@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
-
+import Firebase
+import FirebaseDatabase
 class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var albumHeightConstraint: NSLayoutConstraint!
@@ -14,7 +15,8 @@ class NowPlayingViewController: UIViewController {
     @objc var iPhone4 = false
     @objc var nowPlayingImageView: UIImageView!
     static var radioPlayer: AVPlayer!
-    let streamUrl = "http://139.162.100.116:8000/abc.m3u"
+    let streamUrl = "http://fradio.site:8000/abc.m3u"
+    var ref: DatabaseReference!
     
     static var isPlaying = false;
     override func viewDidLoad() {
@@ -25,6 +27,26 @@ class NowPlayingViewController: UIViewController {
             play()
         }
         reformButton()
+        self.setupFirebase()
+    }
+    
+    private func setupFirebase(){
+        if (FirebaseApp.app() == nil){
+            FirebaseApp.configure()
+        }
+        ref = Database.database().reference(fromURL: "https://fradio-firebase.firebaseio.com/current")
+        ref.removeAllObservers()
+        ref.observe(DataEventType.value, with: { (snapshot) in
+            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let videoId = postDict["id"] as? String
+            if (videoId == nil){
+                self.songLabel.text = "waiting new song..."
+            }else{
+                self.songLabel.text = videoId
+            }
+            print("a")
+        })
+        
     }
     
     private func reformButton(){
@@ -44,6 +66,11 @@ class NowPlayingViewController: UIViewController {
     
     private func play(){
         NowPlayingViewController.radioPlayer = AVPlayer(url: URL.init(string: streamUrl)!);
+        if #available(iOS 10.0, *) {
+            NowPlayingViewController.radioPlayer.automaticallyWaitsToMinimizeStalling = true
+        } else {
+            // Fallback on earlier versions
+        }
         NowPlayingViewController.radioPlayer.play();
         self.playButton.setImage(#imageLiteral(resourceName: "btn-pause"), for: UIControlState.normal)
         NowPlayingViewController.isPlaying = true

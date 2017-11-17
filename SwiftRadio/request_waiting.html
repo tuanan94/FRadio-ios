@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-image: url(http://fradio.site/background.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #999;
+        }
+
+        div, body {
+            margin: 0;
+            padding: 0;
+            font-family: exo, sans-serif;
+
+        }
+
+        .wrapper {
+            height: 100%;
+            width: 100%;
+        }
+
+        .message {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            bottom: 0;
+            display: block;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 0.5em;
+            font-size: 32px;
+            text-align: right;
+        }
+        .animation-box {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .animation-container {
+            width: 1000rem;
+            height: 30rem;
+        }
+
+        @keyframes topFadeOut {
+            0% {
+                position: absolute;
+                top: -3rem;
+                opacity: 0;
+            }
+
+            75% {
+                position: absolute;
+                top: 25%;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes bottomFadeOut {
+            0% {
+                position: absolute;
+                bottom: -5rem;
+                opacity: 0;
+            }
+
+            75% {
+                position: absolute;
+                bottom: 25%;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes topFadeOutVertical {
+            0% {
+                position: absolute;
+                top: -3rem;
+                opacity: 0;
+            }
+
+            75% {
+                position: absolute;
+                top: 45%;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes rightFadeInOut {
+            0% {
+                position: absolute;
+                right: -20px;
+                opacity: 0;
+            }
+
+            90% {
+                position: absolute;
+                right: 100px;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                right: 10rem;
+            }
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+        }
+
+        .first-text {
+            font-size: 22px;
+            position: absolute;
+            left: 2.5rem;
+            top: 5rem;
+            opacity: 0;
+            animation-name: topFadeOut;
+            animation-duration: 10s;
+            color: white;
+            font-weight: bold;
+        }
+
+        .second-text {
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            opacity: 0;
+            animation-name: rightFadeInOut;
+            animation-delay: 4s;
+            animation-duration: 10s;
+            color: white;
+            font-weight: bold;
+
+        }
+        .third-text {
+            font-size: 22px;
+            position: absolute;
+            top: 70%;
+            left: 10%;
+            opacity: 0;
+            color: white;
+            animation-name: fadeInOut;
+            animation-delay: 8s;
+            animation-duration: 9s;
+            font-weight: bold;
+
+        }
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+            crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            console.log('document ready')
+            setTimeout(function(){
+                console.log('after 3secs')
+            }, 3000);
+
+        })
+    </script>
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
+<div class="wrapper">
+        <section class="animation-box">
+            <div class="first-text">1. Download your selected youtube video</div>
+            <div class="second-text">2. Convert from video format<br/> to audio format</div>
+            <div class="third-text">3. Put song to to-play list</div>
+        </section>
+
+</div>
+<div class="message">
+    <h1 style="font-size: 22px">What are we doing?...</h1>
+    <h2 style="font-size: 15px">Please wait for us a second</h2>
+</div>
+</body>
+</html>

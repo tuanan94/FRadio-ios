@@ -37,7 +37,7 @@ class YoutubeSearchViewController: UIViewController {
     }
     
     @IBAction func performSearch(_ sender: Any) {
-        var keyword: String = searchKeyword.text!
+        let keyword: String = searchKeyword.text!
         YoutubeAPI.get_search(query:keyword){ (result) -> () in
             self.reloadSearchTableView(result: result as! NSDictionary)
         }
@@ -48,8 +48,8 @@ class YoutubeSearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        var row = tableView.indexPathForSelectedRow?.row
-        var detailController = segue.destination as! YoutubeDetailViewController
+        let row = tableView.indexPathForSelectedRow?.row
+        let detailController = segue.destination as! YoutubeDetailViewController
         detailController.videoDetails = dataSource?.items.object(at: row!) as! NSDictionary
         print("go to details")
     }
