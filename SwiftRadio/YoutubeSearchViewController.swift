@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class YoutubeSearchViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
@@ -37,11 +38,17 @@ class YoutubeSearchViewController: UIViewController {
     }
     
     @IBAction func performSearch(_ sender: Any) {
+        let banner = StatusBarNotificationBanner(title: "Searching...", style: .info)
+        banner.show()
         let keyword: String = searchKeyword.text!
         YoutubeAPI.get_search(query:keyword){ (result) -> () in
             self.reloadSearchTableView(result: result as! NSDictionary)
         }
+        banner.dismiss()
+        let bannerAfter = StatusBarNotificationBanner(title: "Searched successfully", style: .success)
+        bannerAfter.show()
     }
+    
     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
