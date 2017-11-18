@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,16 +67,6 @@
                                     <action selector="playPausePress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Iu4-Or-kYb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM3-Zh-rNl">
-                                <rect key="frame" x="0.0" y="630.5" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.96334363949977075" green="0.96988341968911918" blue="0.95671561880516265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Recommend song from youtube">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="83L-Wm-tJ1" kind="push" id="pbi-Xj-7Rb"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Waiting for a new song" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="520.5" width="375" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
@@ -87,6 +76,19 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM3-Zh-rNl">
+                                <rect key="frame" x="0.0" y="630.5" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ihr-ZE-Ral"/>
+                                </constraints>
+                                <state key="normal" title="Recommend song from youtube" backgroundImage="button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="83L-Wm-tJ1" kind="push" id="pbi-Xj-7Rb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -97,9 +99,9 @@
                             <constraint firstItem="obn-8m-awZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="37" id="9m0-ca-E91"/>
                             <constraint firstItem="obn-8m-awZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="70" id="Ad0-X2-0Fe"/>
                             <constraint firstItem="dM3-Zh-rNl" firstAttribute="width" secondItem="uXf-Wr-UiK" secondAttribute="width" id="E0s-Kb-wHc"/>
+                            <constraint firstAttribute="bottom" secondItem="dM3-Zh-rNl" secondAttribute="bottom" constant="6.5" id="IhV-MD-EwD"/>
                             <constraint firstItem="JCK-L1-2Sc" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="17" id="OBm-8c-dti"/>
                             <constraint firstItem="KC8-ZG-rx5" firstAttribute="centerX" secondItem="uXf-Wr-UiK" secondAttribute="centerX" id="Y2q-lA-QV0"/>
-                            <constraint firstItem="uXf-Wr-UiK" firstAttribute="baseline" secondItem="dM3-Zh-rNl" secondAttribute="firstBaseline" constant="16" id="dQ2-jd-rqd"/>
                             <constraint firstItem="uXf-Wr-UiK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hPm-1B-yKf"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dM3-Zh-rNl" secondAttribute="trailing" id="jSr-5Y-2md"/>
                             <constraint firstItem="KC8-ZG-rx5" firstAttribute="width" secondItem="uXf-Wr-UiK" secondAttribute="width" id="jTG-4i-SAM"/>
@@ -134,7 +136,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kdl-ej-Zz5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="A8J-Gu-F1O"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kFn-Yc-mPh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,24 +154,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQK-JQ-AqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-205" y="-457"/>
-        </scene>
-        <!--Request Waiting View Controller-->
-        <scene sceneID="aPC-sd-gOo">
-            <objects>
-                <viewController id="iTN-qF-5sh" customClass="RequestWaitingViewController" customModule="SwiftRadio" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AvK-gH-bhF"/>
-                        <viewControllerLayoutGuide type="bottom" id="zXR-ji-6C5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QjG-Vw-fPE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Wb-hz-3nG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="299.5" y="-1000.5"/>
         </scene>
         <!--Song Requesting View Controller-->
         <scene sceneID="qqv-uW-1Fr">
@@ -245,10 +228,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2Q-GH-S6B">
-                                        <rect key="frame" x="36" y="456.5" width="343" height="30"/>
+                                        <rect key="frame" x="36" y="456.5" width="343" height="36"/>
                                         <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Hold me to push this article">
-                                            <color key="titleColor" red="0.96334363950000002" green="0.96988341970000003" blue="0.9567156188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="mJ9-6T-XW4"/>
+                                        </constraints>
+                                        <state key="normal" title="Hold me to push this song" backgroundImage="button">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -309,11 +295,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiY-je-GMb">
-                                <rect key="frame" x="311" y="72" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiY-je-GMb">
+                                <rect key="frame" x="309" y="72" width="50" height="36"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" red="0.96334363950000002" green="0.96988341970000003" blue="0.9567156188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0FI-vV-JvR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="Search" backgroundImage="button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -326,13 +316,16 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keyword: name, singer, genre..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eOQ-z0-Moi">
-                                <rect key="frame" x="16" y="73" width="287" height="30"/>
+                                <rect key="frame" x="16" y="73" width="285" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Qvf-KH-gul"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-8v-4ch">
-                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube-cell" rowHeight="200" id="WEp-ko-DBg" customClass="YoutubeSearchTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
@@ -393,6 +386,7 @@
                             <constraint firstAttribute="trailing" secondItem="NiY-je-GMb" secondAttribute="trailing" constant="16" id="GDJ-my-aje"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dLa-8v-4ch" secondAttribute="trailing" id="Pbg-7h-YFe"/>
                             <constraint firstItem="dLa-8v-4ch" firstAttribute="width" secondItem="PhO-Vm-rfF" secondAttribute="width" id="TuO-6c-ZJS"/>
+                            <constraint firstItem="NiY-je-GMb" firstAttribute="height" secondItem="eOQ-z0-Moi" secondAttribute="height" id="VPa-5T-4Hu"/>
                             <constraint firstItem="dLa-8v-4ch" firstAttribute="top" secondItem="eOQ-z0-Moi" secondAttribute="bottom" constant="8" symbolic="YES" id="VoM-pY-Orv"/>
                             <constraint firstItem="eOQ-z0-Moi" firstAttribute="top" secondItem="lzs-GL-mgg" secondAttribute="bottom" constant="9" id="Zrq-X6-Cgm"/>
                             <constraint firstItem="NiY-je-GMb" firstAttribute="leading" secondItem="eOQ-z0-Moi" secondAttribute="trailing" constant="8" id="hJ9-3B-JJ0"/>
@@ -415,6 +409,7 @@
     <resources>
         <image name="albumArt" width="180" height="180"/>
         <image name="btn-play" width="44" height="44"/>
+        <image name="button" width="300" height="100"/>
         <image name="dark-background" width="626" height="626"/>
         <image name="default-thumbnail" width="640" height="480"/>
     </resources>

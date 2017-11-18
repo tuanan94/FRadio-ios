@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import NotificationBannerSwift
 
 class YoutubeDetailViewController: UIViewController {
     var videoDetails: NSDictionary!
@@ -19,6 +20,7 @@ class YoutubeDetailViewController: UIViewController {
     @IBOutlet weak var videoDescription: UILabel!
     var timer:Timer!
     var pressCount = 0
+    var countingBanner:StatusBarNotificationBanner!
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -48,24 +50,34 @@ class YoutubeDetailViewController: UIViewController {
                              userInfo: nil,
                              repeats: true)
         pressCount = 0;
-        btnPushSong.setTitle("\(pressCount)" + "...", for: UIControlState.normal)
+        if (countingBanner != nil){
+            countingBanner.dismiss()
+        }
+        self.countingBanner = StatusBarNotificationBanner(title: "Pushing...\(3-pressCount)", style: .warning)
+        countingBanner.show()
     }
     
     @objc func rapidFire() {
         if (pressCount == 3) {
             performSegue(withIdentifier: "goToSongRequesting", sender: nil)
             timer.invalidate()
-            btnPushSong.setTitle("Hold me to push this article", for: UIControlState.normal)
+            return
         }
         self.pressCount+=1;
-        btnPushSong.setTitle("\(pressCount)" + "...", for: UIControlState.normal)
+        if (countingBanner != nil){
+            countingBanner.dismiss()
+        }
+        self.countingBanner = StatusBarNotificationBanner(title: "Pushing...\(3-pressCount)", style: .warning)
+        countingBanner.show()
         print("bang")
     }
     
     @IBAction func btnTouchUp(_ sender: Any) {
         print("stop")
         timer.invalidate()
-        btnPushSong.setTitle("Hold me to push this article", for: UIControlState.normal)
+        if (countingBanner != nil){
+            countingBanner.dismiss()
+        }
     }
     
     /*
