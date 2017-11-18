@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3H-co-r2v" userLabel="PlayButton">
-                                <rect key="frame" x="165" y="569.5" width="45" height="45"/>
+                                <rect key="frame" x="165" y="576" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="2BM-7x-5Tq"/>
                                     <constraint firstAttribute="height" constant="45" id="z57-mJ-vRD"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Waiting for a new song" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-ZG-rx5" userLabel="Song Label" customClass="SpringLabel" customModule="SwiftRadio" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="520.5" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="527" width="375" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -77,12 +77,12 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM3-Zh-rNl">
-                                <rect key="frame" x="0.0" y="630.5" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ihr-ZE-Ral"/>
                                 </constraints>
-                                <state key="normal" title="Recommend song from youtube" backgroundImage="button">
+                                <state key="normal" title="Recommend next song" backgroundImage="button">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -99,7 +99,7 @@
                             <constraint firstItem="obn-8m-awZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="37" id="9m0-ca-E91"/>
                             <constraint firstItem="obn-8m-awZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="70" id="Ad0-X2-0Fe"/>
                             <constraint firstItem="dM3-Zh-rNl" firstAttribute="width" secondItem="uXf-Wr-UiK" secondAttribute="width" id="E0s-Kb-wHc"/>
-                            <constraint firstAttribute="bottom" secondItem="dM3-Zh-rNl" secondAttribute="bottom" constant="6.5" id="IhV-MD-EwD"/>
+                            <constraint firstAttribute="bottom" secondItem="dM3-Zh-rNl" secondAttribute="bottom" id="IhV-MD-EwD"/>
                             <constraint firstItem="JCK-L1-2Sc" firstAttribute="top" secondItem="obn-8m-awZ" secondAttribute="bottom" constant="17" id="OBm-8c-dti"/>
                             <constraint firstItem="KC8-ZG-rx5" firstAttribute="centerX" secondItem="uXf-Wr-UiK" secondAttribute="centerX" id="Y2q-lA-QV0"/>
                             <constraint firstItem="uXf-Wr-UiK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hPm-1B-yKf"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="obn-8m-awZ" firstAttribute="trailing" secondItem="RA9-OX-Xr1" secondAttribute="trailing" id="uX9-xo-4bC"/>
                             <constraint firstItem="uXf-Wr-UiK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ukJ-i6-3WQ"/>
                             <constraint firstItem="dM3-Zh-rNl" firstAttribute="top" secondItem="D3H-co-r2v" secondAttribute="bottom" constant="16" id="vFO-wp-oVz"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="uXf-Wr-UiK" secondAttribute="bottom" id="vqi-Me-nfe"/>
+                            <constraint firstAttribute="bottom" secondItem="uXf-Wr-UiK" secondAttribute="bottom" id="vqi-Me-nfe"/>
                             <constraint firstAttribute="trailing" secondItem="uXf-Wr-UiK" secondAttribute="trailing" id="wlz-dV-IhI"/>
                         </constraints>
                     </view>
@@ -135,10 +135,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kdl-ej-Zz5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="A8J-Gu-F1O"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kFn-Yc-mPh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.1175440177321434" green="0.11671449244022369" blue="0.14129963517189026" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -283,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="-693" y="444"/>
         </scene>
-        <!--Search youtube-->
+        <!--Search video-->
         <scene sceneID="fca-L5-sT4">
             <objects>
                 <viewController id="83L-Wm-tJ1" customClass="YoutubeSearchViewController" customModule="SwiftRadio" customModuleProvider="target" sceneMemberID="viewController">
@@ -324,9 +324,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-8v-4ch">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-8v-4ch">
                                 <rect key="frame" x="0.0" y="117" width="375" height="550"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube-cell" rowHeight="200" id="WEp-ko-DBg" customClass="YoutubeSearchTableViewCell" customModule="SwiftRadio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
@@ -380,7 +381,7 @@
                                 <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dLa-8v-4ch" firstAttribute="leading" secondItem="PhO-Vm-rfF" secondAttribute="leading" id="Fs9-zV-nlh"/>
                             <constraint firstAttribute="trailing" secondItem="NiY-je-GMb" secondAttribute="trailing" constant="16" id="GDJ-my-aje"/>
@@ -388,14 +389,14 @@
                             <constraint firstItem="dLa-8v-4ch" firstAttribute="width" secondItem="PhO-Vm-rfF" secondAttribute="width" id="TuO-6c-ZJS"/>
                             <constraint firstItem="NiY-je-GMb" firstAttribute="height" secondItem="eOQ-z0-Moi" secondAttribute="height" id="VPa-5T-4Hu"/>
                             <constraint firstItem="dLa-8v-4ch" firstAttribute="top" secondItem="eOQ-z0-Moi" secondAttribute="bottom" constant="8" symbolic="YES" id="VoM-pY-Orv"/>
-                            <constraint firstItem="eOQ-z0-Moi" firstAttribute="top" secondItem="lzs-GL-mgg" secondAttribute="bottom" constant="9" id="Zrq-X6-Cgm"/>
+                            <constraint firstItem="eOQ-z0-Moi" firstAttribute="top" secondItem="PhO-Vm-rfF" secondAttribute="top" constant="73" id="Zrq-X6-Cgm"/>
                             <constraint firstItem="NiY-je-GMb" firstAttribute="leading" secondItem="eOQ-z0-Moi" secondAttribute="trailing" constant="8" id="hJ9-3B-JJ0"/>
-                            <constraint firstItem="Uvf-l3-TLD" firstAttribute="top" secondItem="dLa-8v-4ch" secondAttribute="bottom" id="k7n-th-cXa"/>
-                            <constraint firstItem="NiY-je-GMb" firstAttribute="top" secondItem="lzs-GL-mgg" secondAttribute="bottom" constant="8" id="o7M-lV-yVn"/>
+                            <constraint firstAttribute="bottom" secondItem="dLa-8v-4ch" secondAttribute="bottom" id="k7n-th-cXa"/>
+                            <constraint firstItem="NiY-je-GMb" firstAttribute="top" secondItem="PhO-Vm-rfF" secondAttribute="top" constant="72" id="o7M-lV-yVn"/>
                             <constraint firstItem="eOQ-z0-Moi" firstAttribute="leading" secondItem="PhO-Vm-rfF" secondAttribute="leading" constant="16" id="v9s-zj-KPZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search youtube" leftItemsSupplementBackButton="YES" id="g4H-XZ-7mU"/>
+                    <navigationItem key="navigationItem" title="Search video" leftItemsSupplementBackButton="YES" id="g4H-XZ-7mU"/>
                     <connections>
                         <outlet property="searchKeyword" destination="eOQ-z0-Moi" id="xdM-hD-ooR"/>
                         <outlet property="tableView" destination="dLa-8v-4ch" id="n6v-FV-v1u"/>

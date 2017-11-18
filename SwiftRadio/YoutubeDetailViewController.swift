@@ -61,6 +61,9 @@ class YoutubeDetailViewController: UIViewController {
         if (pressCount == 3) {
             performSegue(withIdentifier: "goToSongRequesting", sender: nil)
             timer.invalidate()
+            if (countingBanner != nil){
+                countingBanner.dismiss()
+            }
             return
         }
         self.pressCount+=1;
@@ -86,7 +89,7 @@ class YoutubeDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let id = videoDetails.object(forKey: "id") as! NSDictionary
         let videoId = id["videoId"] as! String
-        var songRequestingController = segue.destination as! SongRequestingViewController
+        let songRequestingController = segue.destination as! SongRequestingViewController
         songRequestingController.videoId = videoId
         print("go to request controller")
     }
