@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 import Firebase
 import FirebaseDatabase
+import NotificationBannerSwift
 class NowPlayingViewController: UIViewController {
     
     @IBOutlet weak var albumHeightConstraint: NSLayoutConstraint!
@@ -15,8 +16,9 @@ class NowPlayingViewController: UIViewController {
     @objc var iPhone4 = false
     @objc var nowPlayingImageView: UIImageView!
     static var radioPlayer: AVPlayer!
-    let streamUrl = "http://fradio.site:8000/abc.m3u"
+    let streamUrl = "http://fradio.site:8000/default.m3u"
     var ref: DatabaseReference!
+    static var notification: String!
     
     static var isPlaying = false;
     override func viewDidLoad() {
@@ -29,6 +31,28 @@ class NowPlayingViewController: UIViewController {
         reformButton()
         self.setupFirebase()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.displayNotification()
+    }
+    private func displayNotification(){
+        if NowPlayingViewController.notification == nil {
+            return
+        }
+        switch NowPlayingViewController.notification {
+        case "success":
+            let banner = NotificationBanner(title: "Successfully!!", subtitle: "Thank you, your song will be played soon", style: .success)
+            banner.show()
+            NowPlayingViewController.notification = nil
+            break
+        case "fail":
+            let banner = NotificationBanner(title: "Some thing went wrong", subtitle: "I will investigate this case asap", style: .danger)
+            banner.show()
+            NowPlayingViewController.notification = nil
+            break;
+        default: break
+            // Do nothing
+        }
+    }
     
     private func setupFirebase(){
         if (FirebaseApp.app() == nil){
@@ -38,11 +62,11 @@ class NowPlayingViewController: UIViewController {
         ref.removeAllObservers()
         ref.observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-            let videoId = postDict["id"] as? String
-            if (videoId == nil){
+            let videoTitle = postDict["title"] as? String
+            if (videoTitle == nil){
                 self.songLabel.text = "waiting new song..."
             }else{
-                self.songLabel.text = videoId
+                self.songLabel.text = videoTitle
             }
             print("a")
         })

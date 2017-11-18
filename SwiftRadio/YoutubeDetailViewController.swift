@@ -77,7 +77,6 @@ class YoutubeDetailViewController: UIViewController {
         var songRequestingController = segue.destination as! SongRequestingViewController
         songRequestingController.videoId = videoId
         print("go to request controller")
-        
     }
 
 }

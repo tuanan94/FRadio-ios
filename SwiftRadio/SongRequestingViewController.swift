@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import NotificationBannerSwift
 class SongRequestingViewController: UIViewController {
     let TARGET_URL = "http://fradio.site"
     var videoId: String!
@@ -25,12 +25,10 @@ class SongRequestingViewController: UIViewController {
         let parameters = ["id":videoId as String]
         Alamofire.request(TARGET_URL + "/api/create_song", method: .post , parameters: parameters).responseString { response in
             if (response.response?.statusCode != 200){
-                print("error")
-                self.performSegue(withIdentifier: "backtotop", sender: nil)
+                self.performSegue(withIdentifier: "backtotop", sender: "fail")
+                
             }else{
-                print("success")
-                self.performSegue(withIdentifier: "backtotop", sender: nil)
-
+                self.performSegue(withIdentifier: "backtotop", sender: "success")
             }
         }
         
@@ -50,14 +48,11 @@ class SongRequestingViewController: UIViewController {
     }
     
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        NowPlayingViewController.notification = sender as! String
      }
-     */
     
 }
